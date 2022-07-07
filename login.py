@@ -1,5 +1,5 @@
 
-
+# look from line 197 and update email and password.
 import tkinter as tk
 from tkinter import Message ,Text, Canvas
 import cv2,os
@@ -194,11 +194,11 @@ def send():
 
         s = smtplib.SMTP("smtp.gmail.com" , 587)  # 587 is a port number 
         s.starttls()
-        s.login("245117733029@mvsrec.edu.in" , "Sunny@12345")
+        s.login("mail" , "password")
         global otp
         otp=random.randint(1000, 9999)
         otp = str(otp)
-        s.sendmail("245117733029@mvsrec.edu.in" , txte.get() , otp)
+        s.sendmail("mail" , txte.get() , otp)
         messagebox.showinfo("Send OTP via Email", f"OTP sent to {txte.get()}")
         s.quit()
     
